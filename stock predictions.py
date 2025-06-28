@@ -1,6 +1,7 @@
 import yfinance as yf
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 #import tensorflow as tf
 from tensorflow.keras.models import Sequential
@@ -69,6 +70,7 @@ predicted_stock_price = scaler.inverse_transform(predicted_stock_price.reshape(-
 #calculate RMSE
 rmse = np.sqrt(mean_squared_error(test_data[look_back:], predicted_stock_price))
 print('Root Mean Squared Error:', rmse)
+
 
 #plot actual vs predicted stock prices
 # Make sure both series are the same length
